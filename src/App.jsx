@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from 'react';
+
+const todoList = [
+  {
+    id: 1,
+    title: "Read the Book",
+    author: "James Kirk",
+  },
+  {
+    id: 2,
+    title: "Edit the source code",
+    author: "Luke Skywalker",
+  },
+  {
+    id: 3,
+    title: "Complete assignment",
+    author: "Spok the Vulcan",
+  }
+];
+
+const updatedList = todoList.map((item)=> {
+  return <li key={item.id}> {item.title}</li>;
+});
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+return (
+  <div>
+    <h1>To Do List</h1>
+    <hr />
+    <ul>
+      {updatedList}
+    </ul> 
+  </div>
+);
 }
 
-export default App
+export default App;
