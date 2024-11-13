@@ -1,37 +1,17 @@
-import * as React from 'react';
-
-const todoList = [
-  {
-    id: 1,
-    title: "Read the Book",
-    author: "James Kirk",
-  },
-  {
-    id: 2,
-    title: "Edit the source code",
-    author: "Luke Skywalker",
-  },
-  {
-    id: 3,
-    title: "Complete assignment",
-    author: "Spok the Vulcan",
-  }
-];
-
-const updatedList = todoList.map((item)=> {
-  return <li key={item.id}> {item.title}</li>;
-});
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TodoList from './TodoList';
+import AddTodoForm from './AddTodoForm';
 
 function App() {
 return (
   <div>
-    <h1>To Do List</h1>
-    <hr />
-    <ul>
-      {updatedList}
-    </ul> 
-  </div>
-);
+      {/* <h1>To Do List</h1> */}
+      <AddTodoForm></AddTodoForm>
+      {/* <TodoList></TodoList> 
+    <hr />*/}
+   </div>
+)
 }
 
 export default App;
