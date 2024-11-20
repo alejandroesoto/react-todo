@@ -1,31 +1,19 @@
-const todoList = [
-  {
-    id: 1,
-    title: "Read the Book",
-    author: "James Kirk",
-  },
-  {
-    id: 2,
-    title: "Edit the source code",
-    author: "Luke Skywalker",
-  },
-  {
-    id: 3,
-    title: "Complete assignment",
-    author: "Spok the Vulcan",
-  }
-];
+import TodoListItem from "./TodoListItem";
 
-const updatedList = todoList.map((item)=> {
-  return <li key={item.id}> {item.title}</li>;
-});
+const todoList = [
+    { id: 1, title: "Read the Book", author: "James Kirk"},
+    { id: 2, title: "Edit the source code", author: "Luke Skywalker"},
+    { id: 3, title: "Complete assignment", author: "Spok the Vulcan"}
+];
 
 function TodoList() {
     return (
-        <ul>
-            {updatedList}
-        </ul> 
-    )
-}
+            <div>
+                {todoList.map( todo => (
+                    <TodoListItem key={todo.id} title={todo.title}/>
+                ))}
+            </div>
+    );
+};
 
 export default TodoList;
